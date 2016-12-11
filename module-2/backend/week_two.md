@@ -5,17 +5,45 @@ Fork this respository. Answer the questions to the best of your ability. Try to 
 Note: When you're done, submit a PR. 
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
+  A database which can utilize relationships between sets of data.
+  
 2. What kind of methods are `belongs_to`, and `has_many`? (i.e. class or instance) Give an example.
-3. What do they allow you to do?
-4. What's the difference between agile workflow and waterfall method?
-5. What is the difference between `#new` and `#create`?
-6. At a basic level, what does cURL allow you to do?
-7. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
-8. Define foreign key, primary key, and schema.
-9. Describe the relationship between a foreign key on one table and a primary key on another table.
-10. What are the parts of an HTTP response?
-11. Describe some techniques to make our Sinatra code more DRY. Give an example of when you would use these techniques.
+  ActiveRecord Methods
 
+3. What do they allow you to do?
+  Establish relationships between sets of data, based upon the assumption that there is only one of something to many of
+  another.  These methods allow us to automatically make those connections within the ActiveRecord Database.
+
+4. What's the difference between agile workflow and waterfall method?
+   Agile workflow works on all aspects of the project at small intervals.  Whereas, waterfall does each portion of the process
+   in signifigantly larger "chunks".
+  
+5. What is the difference between `#new` and `#create`?
+  #new creates and instance of an ActiveRecord object, but is not saved to ther database.  Whereas #create does just that.  It
+  both creates a new instance Object of the data, and also saves it in one command.
+
+6. At a basic level, what does cURL allow you to do?
+   Data transfer by script...?  I think ... ?
+  
+7. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
+  One student for every teacher.  Many students for every teacher.  Thus...  Teacher has_many :students, and Students
+  belongs_to :teachers
+  
+8. Define foreign key, primary key, and schema.
+  Foreign Key is the key associated with the direct relationship between two sets of data in ActiveRecord.  Primary key is the
+  key associated with the appropriate data object within a set of data - this is the id number...   Schema file is
+  automatically generated when we perform a rake db:migrate - NEVER MANUALLY CHANGE THIS FILE!!!!
+
+9. Describe the relationship between a foreign key on one table and a primary key on another table.
+  The foreign key is only used for the relationship from one set of data to another.  If you have a primary key, it will only
+  give you information within that ActiveRecord set of data.  All tables generate the same numbers, but are directly connected
+  to thir respective sets, preventing confusion.
+  
+10. What are the parts of an HTTP response?
+  Request, Authentication, Response, Permission .... ?   ...  I have no idea ...  
+
+11. Describe some techniques to make our Sinatra code more DRY. Give an example of when you would use these techniques.
+  When you have relatively small databases.
 
 ### Optional Questions
 
